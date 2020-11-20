@@ -14,7 +14,7 @@ class AfiliacionController extends Controller
      */
     public function index()
     {
-        //
+        return Afiliacion::all();
     }
 
     /**
@@ -29,7 +29,7 @@ class AfiliacionController extends Controller
             "ndi" => ["required", "numeric"],
             "nombre" => ["required", "string"],
             "apellido" => ["required", "string"],
-            "email" => ["required", "email"],
+            "email" => ["required", "email", "unique:afiliaciones"],
             "genero" => ["required", "in:M,F"],
             "salario" => ["required", "numeric"]
         ]);

@@ -21,7 +21,7 @@ class CreateAfiliacionsTable extends Migration
             $table->string("email")->unique();
             $table->enum("genero", ["M", "F"]);
             $table->bigInteger("salario");
-            $table->boolean("aprobado");
+            $table->boolean("aprobado")->nullable();
             $table->timestamps();
         });
     }
